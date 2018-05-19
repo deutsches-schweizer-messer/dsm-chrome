@@ -1,0 +1,21 @@
+{
+    "name": "DSM",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Real-time text processing",
+    "homepage_url": "https://github.com/dmitrychaban",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "DSM"
+    },
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs"
+    ]
+}
