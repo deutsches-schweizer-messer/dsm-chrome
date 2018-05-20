@@ -1,4 +1,16 @@
 (function() {
+    function post(path, params, method) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", path, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        // xhr.onreadystatechange = function () {
+        //     // if (xhr.readyState === 4 && xhr.status === 200) {
+        //     //     var json = JSON.parse(xhr.responseText);
+        //     //     console.log(json.email + ", " + json.password);
+        //     // }
+        // };
+        xhr.send(JSON.stringify(params));
+    }
 
     function getSelectedText() {
         var text = "";
@@ -13,6 +25,7 @@
     function doSomethingWithSelectedText() {
         var selectedText = getSelectedText();
         if (selectedText) {
+            post("http://localhost:8080/word",{definition:selectedText, mainTranslation: "???", language: "de"});
             alert("Got selected text " + selectedText);
         }
     }
